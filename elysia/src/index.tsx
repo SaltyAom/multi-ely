@@ -24,6 +24,8 @@ const Component = ({ name }: { name: string }) => (
   </html>
 );
 
+const Page = Html.compile(Component)
+
 const app = new Elysia()
   .get("/", "hi")
   .post("/json", ({ body }) => body, {
@@ -40,7 +42,7 @@ const app = new Elysia()
   .get("/page.html", ({ query: { name }, set }) => {
     set.headers['content-type'] = 'text/html'
 
-    return <Component name={name} />
+    return <Page name={name} />
   }, {
     query: t.Object({
       name: t.String()
