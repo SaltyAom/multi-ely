@@ -14,7 +14,7 @@ use tokio::net::TcpListener;
 
 #[derive(Serialize, Deserialize)]
 struct Ping {
-    hello: String,
+    name: String,
 }
 
 #[derive(Deserialize)]
