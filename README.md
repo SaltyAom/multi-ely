@@ -1,5 +1,5 @@
 # multi ely
-Benchmark throughput between frameworks.
+Benchmark throughput between frameworks
 - Elysia
 - Axum
 - Actix
@@ -81,4 +81,6 @@ The condition for the following case:
     - must perform input sanitization to prevent XSS attack
 
 ## Additional note
+You might want to adjust total thread according to your CPU manually in `scripts/wrk.sh`
+
 There's an automate test using `bench.ts` but since it allocate some port beforehand, the benchmark will not perform in full performance as expected.
